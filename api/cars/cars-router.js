@@ -25,7 +25,7 @@ router.get('/:id', checkCarId, async (req, res, next) => {
 router.post('/', checkCarPayload, checkVinNumberValid, checkVinNumberUnique, async (req, res, next) => {
   try {
     const car = await Car.create(req.body)
-    res.json(car)
+    res.status(201).json(car)
   } catch (err) {
     next(err)
   }
