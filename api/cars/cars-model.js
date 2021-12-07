@@ -16,12 +16,10 @@ const getByVin = (vin) => {
     .first()
 }
 
-const create = (car) => {
-  return db('cars')
+const create = async (car) => {
+  const [id] = await db('cars')
     .insert(car)
-    .then((id) => {
-      return getByVin(id)
-    })
+  return getById(id)
 }
 
 module.exports = {
