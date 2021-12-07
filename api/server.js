@@ -10,7 +10,7 @@ server.use('/api/cars', carsRouter)
 server.use('*', (req, res, next) => {
   next({
     status: 404,
-    message: 'not found'
+    message: 'not found!'
   })
 })
 

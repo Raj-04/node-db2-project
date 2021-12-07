@@ -4,7 +4,7 @@ const getAll = () => {
   return db('cars')
 }
 
-const getById = () => {
+const getById = (id) => {
   return db('cars')
     .where('id', id)
     .first()
